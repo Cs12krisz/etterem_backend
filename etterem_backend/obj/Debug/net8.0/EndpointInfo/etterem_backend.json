@@ -105,6 +105,84 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Termek"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddTermekDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddTermekDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddTermekDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Termek"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTermekDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTermekDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTermekDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Termek"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },
@@ -124,6 +202,20 @@
         },
         "additionalProperties": false
       },
+      "AddTermekDto": {
+        "type": "object",
+        "properties": {
+          "termekNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "ar": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "UpdateRendelesDto": {
         "type": "object",
         "properties": {
@@ -136,6 +228,24 @@
             "nullable": true
           },
           "asztalSzam": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTermekDto": {
+        "type": "object",
+        "properties": {
+          "termekId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "termekNev": {
+            "type": "string",
+            "nullable": true
+          },
+          "ar": {
             "type": "integer",
             "format": "int32"
           }

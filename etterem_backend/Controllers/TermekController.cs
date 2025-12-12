@@ -55,5 +55,19 @@ namespace etterem_backend.Controllers
 
             return NotFound(request);
         }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteData(int id)
+        {
+            var requestResult = await _termek.Delete(id);
+            var request = requestResult as ResponseDto;
+
+            if (request.Result != null)
+            {
+                return StatusCode(201, request);
+            }
+
+            return NotFound(request);
+        }
     }
 }
