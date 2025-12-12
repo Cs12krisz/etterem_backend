@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "ContainingType": "etterem_backend.Controllers.RendelesController",
+    "Method": "GetAllData",
+    "RelativePath": "api/Rendeles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

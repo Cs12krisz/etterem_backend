@@ -127,3 +127,4 @@ C:\Users\CsKrisz\source\repos\etterem_backend\etterem_backend\obj\Debug\net8.0\r
 C:\Users\CsKrisz\source\repos\etterem_backend\etterem_backend\obj\Debug\net8.0\etterem_backend.pdb
 C:\Users\CsKrisz\source\repos\etterem_backend\etterem_backend\obj\Debug\net8.0\etterem_backend.genruntimeconfig.cache
 C:\Users\CsKrisz\source\repos\etterem_backend\etterem_backend\obj\Debug\net8.0\ref\etterem_backend.dll
+C:\Users\CsKrisz\source\repos\etterem_backend\etterem_backend\obj\Debug\net8.0\etterem_backend.sourcelink.json

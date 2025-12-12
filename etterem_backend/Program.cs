@@ -1,4 +1,9 @@
 
+using etterem_backend.Models;
+using etterem_backend.Models.Dtos;
+using etterem_backend.Services;
+using Org.BouncyCastle.Asn1.Ocsp;
+
 namespace etterem_backend
 {
     public class Program
@@ -6,6 +11,10 @@ namespace etterem_backend
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<EtteremContext>();
+            builder.Services.AddScoped<IRendeles, RendelesService>();
+            builder.Services.AddScoped<ResponseDto>();
 
             // Add services to the container.
 

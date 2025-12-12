@@ -4,6 +4,19 @@
     "title": "etterem_backend",
     "version": "1.0"
   },
-  "paths": { },
+  "paths": {
+    "/api/Rendeles": {
+      "get": {
+        "tags": [
+          "Rendeles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
   "components": { }
 }
