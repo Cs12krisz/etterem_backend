@@ -34,22 +34,5 @@ namespace etterem_backend.Services.Etterem
             }
         }
 
-        public async Task<object> GetAllTermekNameAndPrice()
-        {
-            try
-            {
-                var Termekek = await _context.Termeks.ToArrayAsync();
-                _responseDto.Messsage = "Sikeres lekérdezés";
-                _responseDto.Result = Termekek;
-                return _responseDto;
-
-            }
-            catch (Exception ex)
-            {
-                _responseDto.Messsage = ex.Message;
-                _responseDto.Result = null;
-                return _responseDto;
-            }
-        }
     }
 }

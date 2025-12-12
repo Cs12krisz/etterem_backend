@@ -16,6 +16,36 @@ namespace etterem_backend.Services.Etterem
             _responseDto = responseDto;
         }
 
+        public async Task<object> Delete(int id)
+        {
+            try
+            {
+                var torlendoRendeles = await _context.Rendeles.FirstOrDefaultAsync(r => r.RendelesId == id);
+
+                if (torlendoRendeles != null)
+                {
+                    _context.Rendeles.Remove(torlendoRendeles);
+                    await _context.SaveChangesAsync();
+
+                    _responseDto.Messsage = "Sikeres törlés";
+                    _responseDto.Result = torlendoRendeles;
+                    return _responseDto;
+                }
+
+                _responseDto.Messsage = "Nincsen ilyen id";
+                _responseDto.Result = null;
+                return _responseDto;
+
+
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Messsage = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+        }
+
         public async Task<object> GetAll()
         {
             try
@@ -50,6 +80,38 @@ namespace etterem_backend.Services.Etterem
 
                 _responseDto.Messsage = "Sikeres hozzáadás";
                 _responseDto.Result = rendeles;
+                return _responseDto;
+
+
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Messsage = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+        }
+
+        public async Task<object> Update(UpdateRendelesDto updateRendelesDto)
+        {
+            try
+            {
+                var modositandoRendeles = await _context.Rendeles.FirstOrDefaultAsync(r => r.RendelesId == updateRendelesDto.RendelesId);
+
+                if (modositandoRendeles != null)
+                {
+                    modositandoRendeles.FizetesMod = updateRendelesDto.FizetesMod;
+                    modositandoRendeles.AsztalSzam = updateRendelesDto.AsztalSzam;
+                    _context.Update(modositandoRendeles);
+                    await _context.SaveChangesAsync();
+
+                    _responseDto.Messsage = "Sikeres frissítés";
+                    _responseDto.Result = modositandoRendeles;
+                    return _responseDto;
+                }
+
+                _responseDto.Messsage = "Nincsen ilyen id";
+                _responseDto.Result = null;
                 return _responseDto;
 
 

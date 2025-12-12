@@ -16,6 +16,55 @@
           }
         }
       },
+      "delete": {
+        "tags": [
+          "Rendeles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rendeles"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRendelesDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRendelesDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRendelesDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Rendeles"
@@ -71,6 +120,24 @@
           "fizetesMod": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateRendelesDto": {
+        "type": "object",
+        "properties": {
+          "rendelesId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fizetesMod": {
+            "type": "string",
+            "nullable": true
+          },
+          "asztalSzam": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
