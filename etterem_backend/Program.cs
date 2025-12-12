@@ -2,7 +2,6 @@
 using etterem_backend.Models;
 using etterem_backend.Models.Dtos;
 using etterem_backend.Services;
-using etterem_backend.Services.Etterem;
 using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace etterem_backend

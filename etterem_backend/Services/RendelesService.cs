@@ -3,7 +3,7 @@ using etterem_backend.Models.Dtos;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
-namespace etterem_backend.Services.Etterem
+namespace etterem_backend.Services
 {
     public class RendelesService : IRendeles
     {
