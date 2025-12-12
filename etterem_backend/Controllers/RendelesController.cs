@@ -1,4 +1,5 @@
-﻿using etterem_backend.Services;
+﻿using etterem_backend.Models.Dtos;
+using etterem_backend.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,18 @@ namespace etterem_backend.Controllers
             if (requesResult != null)
             {
                 return Ok(requesResult);
+            }
+
+            return BadRequest(requesResult);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> SetData(AddRendelesDto addRendelesDto)
+        {
+            var requesResult = await _rendeles.Post(addRendelesDto);
+            if (requesResult != null)
+            {
+                return StatusCode(201, requesResult);
             }
 
             return BadRequest(requesResult);

@@ -34,14 +34,24 @@ namespace etterem_backend.Services.Etterem
             }
         }
 
-        public async Task<object> GetAllRendelesNameAndPrice()
+
+        public async Task<object> Post(AddRendelesDto addRendelesDto)
         {
             try
             {
-                var rendelesek = await _context.Rendeles.ToArrayAsync();
-                _responseDto.Messsage = "Sikeres lekérdezés";
-                _responseDto.Result = rendelesek;
+                var rendeles = new Rendele()
+                {
+                    AsztalSzam = addRendelesDto.AsztalSzam,
+                    FizetesMod = addRendelesDto.FizetesMod
+                };
+
+                await _context.Rendeles.AddAsync(rendeles);
+                await _context.SaveChangesAsync();
+
+                _responseDto.Messsage = "Sikeres hozzáadás";
+                _responseDto.Result = rendeles;
                 return _responseDto;
+
 
             }
             catch (Exception ex)

@@ -10,6 +10,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "etterem_backend.Controllers.RendelesController",
+    "Method": "SetData",
+    "RelativePath": "api/Rendeles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addRendelesDto",
+        "Type": "etterem_backend.Models.Dtos.AddRendelesDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "etterem_backend.Controllers.TermekController",
     "Method": "GetAllData",
     "RelativePath": "api/Termek",
