@@ -1,6 +1,6 @@
 ﻿namespace etterem_backend.Services
 {
-    public interface IRendeles
+    public interface ITermek
     {
         Task<object> GetAll();
     }

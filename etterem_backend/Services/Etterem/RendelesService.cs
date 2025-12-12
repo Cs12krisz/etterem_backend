@@ -1,10 +1,9 @@
-﻿
-using etterem_backend.Models;
+﻿using etterem_backend.Models;
 using etterem_backend.Models.Dtos;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
-namespace etterem_backend.Services
+namespace etterem_backend.Services.Etterem
 {
     public class RendelesService : IRendeles
     {
@@ -17,7 +16,25 @@ namespace etterem_backend.Services
             _responseDto = responseDto;
         }
 
-        public async Task<object> GetAllRendeles()
+        public async Task<object> GetAll()
+        {
+            try
+            {
+                var rendelesek = await _context.Rendeles.ToArrayAsync();
+                _responseDto.Messsage = "Sikeres lekérdezés";
+                _responseDto.Result = rendelesek;
+                return _responseDto;
+
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Messsage = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+        }
+
+        public async Task<object> GetAllRendelesNameAndPrice()
         {
             try
             {

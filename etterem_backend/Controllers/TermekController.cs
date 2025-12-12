@@ -6,19 +6,19 @@ namespace etterem_backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RendelesController : ControllerBase
+    public class TermekController : ControllerBase
     {
-        private readonly IRendeles _rendeles;
+        private readonly ITermek _termek;
 
-        public RendelesController(IRendeles rendeles)
+        public TermekController(ITermek termek)
         {
-            _rendeles = rendeles;
+            _termek = termek;
         }
 
         [HttpGet]
         public async Task<ActionResult> GetAllData()
         {
-            var requesResult = await _rendeles.GetAll();
+            var requesResult = await _termek.GetAll();
             if (requesResult != null)
             {
                 return Ok(requesResult);
@@ -26,7 +26,5 @@ namespace etterem_backend.Controllers
 
             return BadRequest(requesResult);
         }
-
-
     }
 }

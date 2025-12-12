@@ -2,6 +2,7 @@
 using etterem_backend.Models;
 using etterem_backend.Models.Dtos;
 using etterem_backend.Services;
+using etterem_backend.Services.Etterem;
 using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace etterem_backend
@@ -14,6 +15,7 @@ namespace etterem_backend
 
             builder.Services.AddDbContext<EtteremContext>();
             builder.Services.AddScoped<IRendeles, RendelesService>();
+            builder.Services.AddScoped<ITermek, TermekService>();
             builder.Services.AddScoped<ResponseDto>();
 
             // Add services to the container.

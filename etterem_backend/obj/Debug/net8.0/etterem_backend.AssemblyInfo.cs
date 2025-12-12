@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("etterem_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0725115779ac51f3ece7b8f1772933ad10b9ca3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b23c324e54e4b315b3bf0fcec0c17be34198ac0")]
 [assembly: System.Reflection.AssemblyProductAttribute("etterem_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("etterem_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
