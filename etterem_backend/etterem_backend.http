@@ -1,0 +1,6 @@
+@etterem_backend_HostAddress = http://localhost:5022
+
+GET {{etterem_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
