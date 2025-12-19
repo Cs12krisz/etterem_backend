@@ -64,6 +64,34 @@ namespace etterem_backend.Services
             }
         }
 
+        public async Task<object> KartyasRendelesek()
+        {
+            try
+            {
+                var kartyasRendelesek = _context.Rendeles.Where(r => r.FizetesMod == "Kártya").ToArray();
+                
+                if (kartyasRendelesek != null)
+                {
+                    _responseDto.Result = kartyasRendelesek;
+                    _responseDto.Messsage = "Sikeres lekérdezés";
+                    return _responseDto;
+
+                }
+                
+                _responseDto.Result = null;
+                _responseDto.Messsage = "Nincsen kártyás rendelések";
+                return _responseDto;
+                
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Result= null;
+                _responseDto.Messsage = ex.Message;
+                return _responseDto;
+            }
+            
+
+        }
 
         public async Task<object> Post(AddRendelesDto addRendelesDto)
         {

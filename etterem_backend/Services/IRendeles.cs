@@ -8,7 +8,6 @@ namespace etterem_backend.Services
         Task<object> Post(AddRendelesDto addRendelesDto);
         Task<object> Delete(int id);
         Task<object> Update(UpdateRendelesDto updateRendelesDto);
-        
-
+        Task<object> KartyasRendelesek();
     }
 }

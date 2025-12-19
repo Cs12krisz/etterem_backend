@@ -28,6 +28,18 @@ namespace etterem_backend.Controllers
             return BadRequest(requesResult);
         }
 
+        [HttpGet("KartyasRendelesek")]
+        public async Task<ActionResult> GetAllKartyasFizetes()
+        {
+            var requestResult = await _rendeles.KartyasRendelesek();
+            if (requestResult != null)
+            {
+                return Ok(requestResult);
+            }
+
+            return BadRequest(requestResult);
+        }
+
         [HttpDelete]
         public async Task<ActionResult> RemoveData(int id)
         {
