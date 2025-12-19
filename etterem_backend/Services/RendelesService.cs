@@ -64,6 +64,77 @@ namespace etterem_backend.Services
             }
         }
 
+        public async Task<object> GetKettesRendelesOsszErteket()
+        {
+            try
+            {
+                var kettesrendeloOsszErtek = _context.Rendelestetels
+                .Include(r => r.Rendeles)
+                .Include(r => r.Termek)
+                .Where(r => r.Rendeles.RendelesId == 2)
+                .Sum(r => r.Termek.Ar);
+
+                _responseDto.Messsage = "Sikeres";
+                _responseDto.Result = kettesrendeloOsszErtek;
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Messsage = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+            
+        }
+
+        public async Task<object> GetKolaRendelesek()
+        {
+            try
+            {
+                var kolaRendelesek = await _context.Rendelestetels
+                    .Include(r => r.Rendeles)
+                    .Include(r => r.Termek)
+                    .Where(r => r.Termek.TermekNev == "Kóla")
+                    .Select(r => r.Rendeles)
+                    .ToArrayAsync();
+
+                if (kolaRendelesek != null)
+                {
+                    _responseDto.Result = kolaRendelesek;
+                    _responseDto.Messsage = "Sikeres";
+                    return _responseDto;
+                }
+
+                _responseDto.Result = null;
+                _responseDto.Messsage = "Sikertelen";
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Result = null;
+                _responseDto.Messsage = ex.Message;
+                return _responseDto;
+            }
+        }
+
+        public async Task<object> GetRendelesekTetelSzama()
+        {
+            try
+            {
+                var rendelesekTetelszama = await _context.Rendeles.Select(r => new { Rendeles = r, TetelSzama = r.Rendelestetels.Count}).ToArrayAsync();
+
+                _responseDto.Messsage = "Sikeres";
+                _responseDto.Result = rendelesekTetelszama;
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Messsage = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+        }
+
         public async Task<object> KartyasRendelesek()
         {
             try
@@ -144,6 +215,30 @@ namespace etterem_backend.Services
                 return _responseDto;
             }
 
+        }
+
+        public async Task<object> RendelesTetelekSorbaRendezve()
+        {
+            try
+            {
+                var rendelesTetelekSorbaRendezve = _context.Rendeles.Include(r => r.Rendelestetels).OrderBy(r => r.RendelesId);
+
+                if (rendelesTetelekSorbaRendezve != null)
+                {
+                    _responseDto.Result = rendelesTetelekSorbaRendezve;
+                    _responseDto.Messsage = "Sikeres lekérdezés";
+                    return _responseDto;
+                }
+                _responseDto.Result = null;
+                _responseDto.Messsage = "Nincsen tételek";
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Result = null;
+                _responseDto.Messsage = ex.Message;
+                return _responseDto;
+            }
         }
 
         public async Task<object> Update(UpdateRendelesDto updateRendelesDto)

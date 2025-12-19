@@ -1,4 +1,5 @@
-﻿using etterem_backend.Models.Dtos;
+﻿using etterem_backend.Models;
+using etterem_backend.Models.Dtos;
 using etterem_backend.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -51,6 +52,55 @@ namespace etterem_backend.Controllers
 
             return NotFound(requestResult);
         }
+
+        [HttpGet("RendelesTetelekSorbaRendezve")]
+        public async Task<ActionResult> GetRendelesTetelekSorban()
+        {
+            var requestResult = await _rendeles.RendelesTetelekSorbaRendezve();
+            if (requestResult != null)
+            {
+                return Ok(requestResult);
+            }
+
+            return NotFound(requestResult);
+        }
+
+        [HttpGet("KolaRendelesek")]
+        public async Task<ActionResult> GetKolaRendelesek()
+        {
+            var requesResult = await _rendeles.GetKolaRendelesek();
+            if (requesResult != null)
+            {
+                return Ok(requesResult);
+            }
+
+            return NotFound(requesResult);
+        }
+
+        [HttpGet("RendelesekTetelszam")]
+        public async Task<ActionResult> GetRendelesTeleSzam()
+        {
+            var requesResult = await _rendeles.GetRendelesekTetelSzama();
+            if (requesResult != null)
+            {
+                return Ok(requesResult);
+            }
+
+            return NotFound(requesResult);
+        }
+
+        [HttpGet("KettesRendelesOsszege")]
+        public async Task<ActionResult> KettesRendelesOsszege()
+        {
+            var requesResult = await _rendeles.GetKettesRendelesOsszErteket();
+            if (requesResult != null)
+            {
+                return Ok(requesResult);
+            }
+
+            return NotFound(requesResult);
+        }
+
 
         [HttpDelete]
         public async Task<ActionResult> RemoveData(int id)

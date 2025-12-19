@@ -119,6 +119,54 @@
         }
       }
     },
+    "/api/Rendeles/RendelesTetelekSorbaRendezve": {
+      "get": {
+        "tags": [
+          "Rendeles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rendeles/KolaRendelesek": {
+      "get": {
+        "tags": [
+          "Rendeles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rendeles/RendelesekTetelszam": {
+      "get": {
+        "tags": [
+          "Rendeles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rendeles/KettesRendelesOsszege": {
+      "get": {
+        "tags": [
+          "Rendeles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Termek": {
       "get": {
         "tags": [
@@ -209,7 +257,19 @@
         }
       }
     },
-    "/api/Termek/NameAndPrice": {
+    "/api/Termek/NevEsErtek": {
+      "get": {
+        "tags": [
+          "Termek"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Termek/EladottTermekek": {
       "get": {
         "tags": [
           "Termek"

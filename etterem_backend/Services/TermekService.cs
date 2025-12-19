@@ -64,6 +64,62 @@ namespace etterem_backend.Services
             }
         }
 
+        public async Task<object> GetEladottTermekekLegalabbEgyszer()
+        {
+            try
+            {
+                var legalabbEgyszerEladottTermekek = await _context.Rendelestetels.Include(r => r.Termek).ToArrayAsync();
+
+                if (legalabbEgyszerEladottTermekek != null)
+                {
+                    _responseDto.Result = legalabbEgyszerEladottTermekek;
+                    _responseDto.Messsage = "Sikeres lekérdezés";
+                    return _responseDto;
+                }
+
+                _responseDto.Result = null;
+                _responseDto.Messsage = "Sikertelen";
+                return _responseDto;
+            }
+            catch (Exception ex) 
+            { 
+                _responseDto.Result = null;
+                _responseDto.Messsage = ex.Message;
+                return _responseDto;
+            }
+
+        }
+
+        public async Task<object> GetKolaRendelesek()
+        {
+            try
+            {
+                var kolaRendelesek = await _context.Rendelestetels
+                    .Include(r => r.Rendeles)
+                    .Include(r => r.Termek)
+                    .Where(r => r.Termek.TermekNev == "Kóla")
+                    .Select(r => r.Rendeles)
+                    .ToArrayAsync();
+
+                if (kolaRendelesek != null)
+                {
+                    _responseDto.Result = kolaRendelesek;
+                    _responseDto.Messsage = "Sikeres";
+                    return _responseDto;
+                }
+
+                _responseDto.Result = null;
+                _responseDto.Messsage = "Sikertelen";
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Result = null;
+                _responseDto.Messsage = ex.Message;
+                return _responseDto;
+            }
+        }
+
         public async Task<object> GetNameAndPrice()
         {
             try

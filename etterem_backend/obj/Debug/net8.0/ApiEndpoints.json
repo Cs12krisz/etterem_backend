@@ -69,8 +69,48 @@
   },
   {
     "ContainingType": "etterem_backend.Controllers.RendelesController",
+    "Method": "KettesRendelesOsszege",
+    "RelativePath": "api/Rendeles/KettesRendelesOsszege",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "etterem_backend.Controllers.RendelesController",
+    "Method": "GetKolaRendelesek",
+    "RelativePath": "api/Rendeles/KolaRendelesek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "etterem_backend.Controllers.RendelesController",
+    "Method": "GetRendelesTeleSzam",
+    "RelativePath": "api/Rendeles/RendelesekTetelszam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "etterem_backend.Controllers.RendelesController",
     "Method": "GetRendelesTetelek",
     "RelativePath": "api/Rendeles/RendelesTetelek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "etterem_backend.Controllers.RendelesController",
+    "Method": "GetRendelesTetelekSorban",
+    "RelativePath": "api/Rendeles/RendelesTetelekSorbaRendezve",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -137,8 +177,18 @@
   },
   {
     "ContainingType": "etterem_backend.Controllers.TermekController",
+    "Method": "GetEladottTermekek",
+    "RelativePath": "api/Termek/EladottTermekek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "etterem_backend.Controllers.TermekController",
     "Method": "GetNameAndPrice",
-    "RelativePath": "api/Termek/NameAndPrice",
+    "RelativePath": "api/Termek/NevEsErtek",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

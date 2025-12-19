@@ -9,6 +9,9 @@ namespace etterem_backend.Services
         Task<object> Delete(int id);
         Task<object> Update(UpdateTermekDto updateTermekDto);
         Task<object> GetNameAndPrice();
+        Task<object> GetEladottTermekekLegalabbEgyszer();
+
+
 
     }
 }

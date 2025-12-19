@@ -28,7 +28,7 @@ namespace etterem_backend.Controllers
             return BadRequest(requesResult);
         }
 
-        [HttpGet("NameAndPrice")]
+        [HttpGet("NevEsErtek")]
         public async Task<ActionResult> GetNameAndPrice()
         {
             var requesResult = await _termek.GetNameAndPrice();
@@ -39,6 +39,20 @@ namespace etterem_backend.Controllers
 
             return BadRequest(requesResult);
         }
+
+        [HttpGet("EladottTermekek")]
+        public async Task<ActionResult> GetEladottTermekek()
+        {
+            var requesResult = await _termek.GetEladottTermekekLegalabbEgyszer();
+            if (requesResult != null)
+            {
+                return Ok(requesResult);
+            }
+
+            return BadRequest(requesResult);
+        }
+
+       
 
         [HttpPost]
         public async Task<ActionResult> SetData(AddTermekDto addTermekDto)
