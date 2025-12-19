@@ -28,6 +28,18 @@ namespace etterem_backend.Controllers
             return BadRequest(requesResult);
         }
 
+        [HttpGet("NameAndPrice")]
+        public async Task<ActionResult> GetNameAndPrice()
+        {
+            var requesResult = await _termek.GetNameAndPrice();
+            if (requesResult != null)
+            {
+                return Ok(requesResult);
+            }
+
+            return BadRequest(requesResult);
+        }
+
         [HttpPost]
         public async Task<ActionResult> SetData(AddTermekDto addTermekDto)
         {

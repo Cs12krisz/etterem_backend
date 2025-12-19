@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CsKrisz\\source\\repos\\etterem_backend\\etterem_backend\\etterem_backend.csproj": {}
+    "C:\\Users\\CsKrisz\\Desktop\\cloned  repositories\\etterem_backend\\etterem_backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CsKrisz\\source\\repos\\etterem_backend\\etterem_backend\\etterem_backend.csproj": {
+    "C:\\Users\\CsKrisz\\Desktop\\cloned  repositories\\etterem_backend\\etterem_backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CsKrisz\\source\\repos\\etterem_backend\\etterem_backend\\etterem_backend.csproj",
+        "projectUniqueName": "C:\\Users\\CsKrisz\\Desktop\\cloned  repositories\\etterem_backend\\etterem_backend.csproj",
         "projectName": "etterem_backend",
-        "projectPath": "C:\\Users\\CsKrisz\\source\\repos\\etterem_backend\\etterem_backend\\etterem_backend.csproj",
+        "projectPath": "C:\\Users\\CsKrisz\\Desktop\\cloned  repositories\\etterem_backend\\etterem_backend.csproj",
         "packagesPath": "C:\\Users\\CsKrisz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CsKrisz\\source\\repos\\etterem_backend\\etterem_backend\\obj\\",
+        "outputPath": "C:\\Users\\CsKrisz\\Desktop\\cloned  repositories\\etterem_backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -184,6 +184,18 @@
           }
         }
       }
+    },
+    "/api/Termek/NameAndPrice": {
+      "get": {
+        "tags": [
+          "Termek"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

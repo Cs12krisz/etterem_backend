@@ -64,6 +64,22 @@ namespace etterem_backend.Services
             }
         }
 
+        public async Task<object> GetNameAndPrice()
+        {
+            try
+            {
+                var termekNevEsErtek = _context.Termeks.Select(t => new { t.TermekNev, t.Ar });
+                _responseDto.Messsage = "Sikeres lelérdezés";
+                _responseDto.Result = termekNevEsErtek;
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Result = null;
+                _responseDto.Messsage = ex.Message;
+                return _responseDto;
+            }
+        }
 
         public async Task<object> Post(AddTermekDto addTermekDto)
         {

@@ -8,7 +8,7 @@ namespace etterem_backend.Services
         Task<object> Post(AddTermekDto addTermekDto);
         Task<object> Delete(int id);
         Task<object> Update(UpdateTermekDto updateTermekDto);
-
+        Task<object> GetNameAndPrice();
 
     }
 }

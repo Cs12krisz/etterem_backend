@@ -114,5 +114,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "etterem_backend.Controllers.TermekController",
+    "Method": "GetNameAndPrice",
+    "RelativePath": "api/Termek/NameAndPrice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
