@@ -117,6 +117,34 @@ namespace etterem_backend.Services
             }
         }
 
+        public async Task<object> GetRendelesekOsszErteket()
+        {
+            try
+            {
+                var rendelesekOsszege = _context.Rendelestetels
+                    .Include(r => r.Termek)
+                    .GroupBy(r => r.RendelesId)
+                    .Select(r => new { RendelesId = r.Key, Osszeg = r.Select(r => r.Termek.Ar).Sum(t => t)});
+
+                if (rendelesekOsszege != null)
+                {
+                    _responseDto.Result = rendelesekOsszege;
+                    _responseDto.Messsage = "Sikeres";
+                    return _responseDto;
+                }
+
+                _responseDto.Result = null;
+                _responseDto.Messsage = "Sikertelen";
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Result = null;
+                _responseDto.Messsage = ex.Message;
+                return _responseDto;
+            }
+        }
+
         public async Task<object> GetRendelesekTetelSzama()
         {
             try

@@ -100,6 +100,17 @@ namespace etterem_backend.Controllers
 
             return NotFound(requesResult);
         }
+        [HttpGet("RendeleseknekOsszege")]
+        public async Task<ActionResult> RendeleseknekOsszege()
+        {
+            var requesResult = await _rendeles.GetRendelesekOsszErteket();
+            if (requesResult != null)
+            {
+                return Ok(requesResult);
+            }
+
+            return NotFound(requesResult);
+        }
 
 
         [HttpDelete]

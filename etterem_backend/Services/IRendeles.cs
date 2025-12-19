@@ -14,6 +14,7 @@ namespace etterem_backend.Services
         Task<object> GetKolaRendelesek();
         Task<object> GetRendelesekTetelSzama();
         Task<object> GetKettesRendelesOsszErteket();
+        Task<object> GetRendelesekOsszErteket();
 
     }
 }

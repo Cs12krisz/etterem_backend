@@ -89,6 +89,16 @@
   },
   {
     "ContainingType": "etterem_backend.Controllers.RendelesController",
+    "Method": "RendeleseknekOsszege",
+    "RelativePath": "api/Rendeles/RendeleseknekOsszege",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "etterem_backend.Controllers.RendelesController",
     "Method": "GetRendelesTeleSzam",
     "RelativePath": "api/Rendeles/RendelesekTetelszam",
     "HttpMethod": "GET",
