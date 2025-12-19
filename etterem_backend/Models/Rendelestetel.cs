@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace etterem_backend.Models;
 
@@ -12,6 +13,5 @@ public partial class Rendelestetel
     public int TermekId { get; set; }
 
     public virtual Rendele Rendeles { get; set; } = null!;
-
     public virtual Termek Termek { get; set; } = null!;
 }

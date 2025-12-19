@@ -68,7 +68,7 @@ namespace etterem_backend.Services
         {
             try
             {
-                var kartyasRendelesek = _context.Rendeles.Where(r => r.FizetesMod == "Kártya").ToArray();
+                var kartyasRendelesek = await _context.Rendeles.Where(r => r.FizetesMod == "Kártya").ToArrayAsync();
                 
                 if (kartyasRendelesek != null)
                 {
@@ -85,7 +85,7 @@ namespace etterem_backend.Services
             }
             catch (Exception ex)
             {
-                _responseDto.Result= null;
+                _responseDto.Result = null;
                 _responseDto.Messsage = ex.Message;
                 return _responseDto;
             }
@@ -118,6 +118,32 @@ namespace etterem_backend.Services
                 _responseDto.Result = null;
                 return _responseDto;
             }
+        }
+
+        public async Task<object> RendelesTetelek()
+        {
+            try {
+
+                var tetelek = _context.Rendelestetels.Include(t => t.Termek).Select(t =>  new { t.RendelesId, t.Termek.TermekNev, t.Termek.Ar } );
+
+                if (tetelek != null)
+                {
+                    _responseDto.Result = tetelek;
+                    _responseDto.Messsage = "Sikeres lekérdezés";
+                    return _responseDto;
+                }
+
+                _responseDto.Result = null;
+                _responseDto.Messsage = "Nincsen rendelés tételek";
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Result = null;
+                _responseDto.Messsage = ex.Message;
+                return _responseDto;
+            }
+
         }
 
         public async Task<object> Update(UpdateRendelesDto updateRendelesDto)

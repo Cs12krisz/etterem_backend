@@ -68,6 +68,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "etterem_backend.Controllers.RendelesController",
+    "Method": "GetRendelesTetelek",
+    "RelativePath": "api/Rendeles/RendelesTetelek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "etterem_backend.Controllers.TermekController",
     "Method": "GetAllData",
     "RelativePath": "api/Termek",

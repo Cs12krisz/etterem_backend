@@ -37,7 +37,19 @@ namespace etterem_backend.Controllers
                 return Ok(requestResult);
             }
 
-            return BadRequest(requestResult);
+            return NotFound(requestResult);
+        }
+
+        [HttpGet("RendelesTetelek")]
+        public async Task<ActionResult> GetRendelesTetelek()
+        {
+            var requestResult = await _rendeles.RendelesTetelek();
+            if (requestResult != null)
+            {
+                return Ok(requestResult);
+            }
+
+            return NotFound(requestResult);
         }
 
         [HttpDelete]
